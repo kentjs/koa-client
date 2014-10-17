@@ -43,7 +43,7 @@ app.use = function(fn) {
 		throw new Error('app.use() requires a generator function')
 
 	this.middleware.push(fn)
-	return fn
+	return app
 }
 
 
@@ -70,10 +70,10 @@ app.createContext = function(req) {
 	request.response = response
 	response.request = request
 
-	response.method = req.method
-	response.url = req.url
-	response.headers = req.headers || {}
-	response.body = req.body
+	request.method = req.method
+	request.url = req.url
+	request.headers = req.headers || {}
+	request.body = req.body
 
 	return context
 }
@@ -87,6 +87,7 @@ app.createContext = function(req) {
 
 app.request = function(req, opts) {
 	var parts
+	  , app = this
 
 	opts = opts || {}
 
@@ -110,7 +111,7 @@ app.request = function(req, opts) {
 	var ctx = this.createContext(req)
 
 	return new Promise(function(resolve, reject) {
-		fn.call(ctx, function(err) {
+		app.composed.call(ctx, function(err) {
 			if(err) {
 				ctx.onerror.apply(ctx, arguments)
 				return reject(err)
@@ -207,7 +208,7 @@ function * respond() {
 	yield * next
 	if(statuses.redirect[this.status]) {
 		setTimeout(function() {
-			this.app.request(this.response.get('Location'))
+			this.app.redirect(this.response.get('Location'))
 		})
 	}
 }
