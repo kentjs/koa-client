@@ -1,4 +1,7 @@
 {
+  "name":"koa-client",
+  "description": "Client-side implementation of the koa app",
+  "main": "lib/application.js",
   "dependencies": {
     "co": "^3.1.0",
     "component-delegate": "^0.2.3",
@@ -11,5 +14,13 @@
     "qs": "^2.2.4",
     "statuses": "^1.2.0",
     "url": "^0.10.1"
+  },
+  "devDependencies": {
+    "karma": "^0.12.24",
+    "karma-browserify-preprocessor": "^0.1.0",
+    "karma-chrome-launcher": "^0.1.5",
+    "karma-mocha": "^0.1.9",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "mocha": "^1.21.5"
   }
 }
