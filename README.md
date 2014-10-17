@@ -1,7 +1,7 @@
 Koa-Client
 ==========
 
-A client-side implementation of koa that automatically intercepts anchor clicks and form submissions.  The goal of this project is to mimic the koa server implementation as closely as possible so that middleware can work on the client (such as `koa-mount-route`) while keeping file size to a minimum.
+A client-side implementation of [koa](https://github.com/koajs/koa) that automatically intercepts anchor clicks and form submissions.  The goal of this project is to mimic the koa server implementation as closely as possible so that middleware can work on the client (such as `koa-mount-route`) while keeping file size to a minimum.
 
 Install
 -------
@@ -59,7 +59,7 @@ references the same propeties as the server:
 
 #### Accessors/Methods
 
-Aside from those that have been removed, `koa-client` provides the same accessors that are on the server, although they implementation on the request/response may differ.
+Aside from those that have been removed, `koa-client` provides the same accessors that are on the server, although the implementation on the request/response may differ.
 
 ##### Request
 
@@ -139,6 +139,21 @@ The following are actually slightly modified, since there is no node `req` under
 
 ##### request.header[s]/request.get()
 does not get headers from an underlying node `res` object.  expects lowercase header names.
+
+#### Removed Properties
+
+- _**request.fresh** removed_
+- _**request.stale** removed_
+- _**request.socket** removed_
+- _**request.secure** removed_
+- _**request.ip** removed_
+- _**request.ips** removed_
+- _**request.subdomains** removed_
+- _**request.is()** removed_
+- _**request.accepts()** removed_
+- _**request.acceptsEncodings()** removed_
+- _**request.acceptsCharsets()** removed_
+- _**request.acceptsLanguages()** removed_
 
 ### Response
 
