@@ -4,7 +4,6 @@
  */
 
 var statuses = require('statuses')
-  , noop = function(){}
 
 /**
  * Prototype.
