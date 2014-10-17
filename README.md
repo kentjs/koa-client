@@ -59,7 +59,7 @@ references the same propeties as the server:
 
 #### Accessors/Methods
 
-Aside from those that have been removed, `koa-client` provides the same accessors that are on the server, although they implementation on the request/response may differ.
+Aside from those that have been removed, `koa-client` provides the same accessors that are on the server, although the implementation on the request/response may differ.
 
 ##### Request
 
@@ -140,6 +140,21 @@ The following are actually slightly modified, since there is no node `req` under
 ##### request.header[s]/request.get()
 does not get headers from an underlying node `res` object.  expects lowercase header names.
 
+#### Removed Properties
+
+- _**request.fresh** removed_
+- _**request.stale** removed_
+- _**request.socket** removed_
+- _**request.secure** removed_
+- _**request.ip** removed_
+- _**request.ips** removed_
+- _**request.subdomains** removed_
+- _**request.is()** removed_
+- _**request.accepts()** removed_
+- _**request.acceptsEncodings()** removed_
+- _**request.acceptsCharsets()** removed_
+- _**request.acceptsLanguages()** removed_
+
 ### Response
 
 #### Similar Properties
@@ -149,11 +164,6 @@ does not set `response.body` or `response.type`, otherwise the same
 
 ##### response.header[s]/response.get()/response.set()/response.remove()
 does not set headers on an underlying node `res` object.  forces `toLowerCase()` on all header names.
-
-#### Noops
-
-- response.attachment()
-- response.vary()
 
 #### Unspecified Properties
 The following are unspecified properties of the response object.  They have no getter/setter but you can still use them, they just won't do their magic behind the scence.  (ex. `request.body = {}` will only set `request.body` to `{}`, it will not update content type/length headers. 
@@ -169,6 +179,8 @@ The following are unspecified properties of the response object.  They have no g
 
 #### Removed Properties
 
+- _**response.attachment()** removed_
+- _**response.vary()** removed_
 - _**response.socket** removed_
 - _**response.is()** removed_
 - _**response.writeable** removed_

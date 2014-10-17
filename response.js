@@ -20,13 +20,6 @@ module.exports = {
     return this.headers
   },
 
-  /**
-   * Noops, so things don't break
-   */
-
-  vary: noop,
-  attachment: noop,
-
 
   /**
    * Perform a [302] redirect to `url`.
