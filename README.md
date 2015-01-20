@@ -23,7 +23,7 @@ sends a request through `app`'s middleware functions.  It also updates the brows
 ###`app.redirect(req)`
 shorthand for `app.request(req, { replace_state:true })`
 
-###`app.refresh(req)`
+###`app.refresh()`
 shorthand for `app.request(window.location.href, { replace_state:true })`
 
 
