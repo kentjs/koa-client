@@ -1,5 +1,6 @@
 {
   "name":"koa-client",
+  "version": "1.0.0",
   "description": "Client-side implementation of the koa app",
   "main": "lib/application.js",
   "dependencies": {
