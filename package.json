@@ -4,7 +4,7 @@
   "description": "Client-side implementation of the koa app",
   "main": "lib/application.js",
   "dependencies": {
-    "co": "^3.1.0",
+    "co": "^4.2.0",
     "component-delegate": "^0.2.3",
     "cookie": "^0.1.2",
     "delegates": "0.0.3",
