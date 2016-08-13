@@ -1,6 +1,8 @@
 Koa-Client
 ==========
 
+> NOTE: This project is not actively maintained.  As an alternative check out [Rill](https://github.com/rill-js/rill) and it's http-server-in-the-browser implementation: [@rill/http](https://github.com/rill-js/http).
+
 A client-side implementation of [koa](https://github.com/koajs/koa) that automatically intercepts anchor clicks and form submissions.  The goal of this project is to mimic the koa server implementation as closely as possible so that middleware can work on the client (such as `koa-mount-route`) while keeping file size to a minimum.
 
 Install
